@@ -1,5 +1,5 @@
 // api.ts
-import apiClient from "./apiClient";
+import apiClient from "./apiClientMain";
 import { Film, Person, Starship } from "../Types";
 
 interface GetHeroesResponse {

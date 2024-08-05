@@ -1,38 +1,46 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { HeroesList } from "./HeroesList";
+import { HeroesList } from "./HeroesListMain";
 import { Person } from "../../Types";
 
 const heroes: Person[] = [
   {
-      id: 1, name: "Luke Skywalker", gender: "male", films: [], starships: [],
-      height: "",
-      mass: "",
-      hair_color: "",
-      skin_color: "",
-      eye_color: "",
-      birth_year: "",
-      homeworld: 0,
-      species: [],
-      vehicles: [],
-      created: "",
-      edited: "",
-      url: ""
+    id: 1,
+    name: "Luke Skywalker",
+    gender: "male",
+    films: [],
+    starships: [],
+    height: "",
+    mass: "",
+    hair_color: "",
+    skin_color: "",
+    eye_color: "",
+    birth_year: "",
+    homeworld: 0,
+    species: [],
+    vehicles: [],
+    created: "",
+    edited: "",
+    url: "",
   },
   {
-      id: 2, name: "Leia Organa", gender: "female", films: [], starships: [],
-      height: "",
-      mass: "",
-      hair_color: "",
-      skin_color: "",
-      eye_color: "",
-      birth_year: "",
-      homeworld: 0,
-      species: [],
-      vehicles: [],
-      created: "",
-      edited: "",
-      url: ""
+    id: 2,
+    name: "Leia Organa",
+    gender: "female",
+    films: [],
+    starships: [],
+    height: "",
+    mass: "",
+    hair_color: "",
+    skin_color: "",
+    eye_color: "",
+    birth_year: "",
+    homeworld: 0,
+    species: [],
+    vehicles: [],
+    created: "",
+    edited: "",
+    url: "",
   },
 ];
 

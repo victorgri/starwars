@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getHeroes } from "./api/api";
-import { HeroesList } from "./components/HeroesList/HeroesList";
-import { HeroDetails } from "./components/HeroDetails/HeroDetails";
+import { getHeroes } from "./api/apiMain";
+import { HeroesList } from "./components/HeroesList/HeroesListMain";
+import { HeroDetails } from "./components/HeroDetails/HeroDetailsMain";
 import { Person } from "./Types";
 
-const App: React.FC = () => {
+const AppMain: React.FC = () => {
   const [details, setDetails] = useState(false);
   const [heroes, setHeroes] = useState<Person[]>([]);
   const [page, setPage] = useState(1);
@@ -56,4 +56,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default AppMain;

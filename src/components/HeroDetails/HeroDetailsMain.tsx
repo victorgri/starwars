@@ -2,7 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { Background, Edge, ReactFlow, type Node } from "@xyflow/react";
 import { ClipLoader } from "react-spinners";
 import { Film, Person, Starship } from "../../Types";
-import { getFilms, getHeroDetails, getStarshipDetails } from "../../api/api";
+import {
+  getFilms,
+  getHeroDetails,
+  getStarshipDetails,
+} from "../../api/apiMain";
 import "./HeroDetails.scss";
 import "@xyflow/react/dist/style.css";
 import classNames from "classnames";
