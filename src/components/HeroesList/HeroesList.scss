@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.heroes {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &__isLoading {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            background-color: $primary-color;
+            color: white;
+
+            th {
+                padding: 10px;
+            }
+        }
+
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background-color: #f9f9f9;
+                }
+
+                td {
+                    padding: 10px;
+                    text-align: center;
+
+                    img {
+                        width: 50px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    button {
+        @include button-style($button-color, $button-hover-color);
+        display: block;
+        margin: 20px auto 0;
+    }
+}

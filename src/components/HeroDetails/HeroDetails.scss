@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.details {
+    position: relative;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &__active {
+        opacity: 0.8;
+        pointer-events: none;
+    }
+
+    .react-flow {
+        height: 600px;
+        border: 1px solid $primary-color;
+    }
+
+    button {
+        @include button-style($button-color, $button-hover-color);
+        margin-top: 20px;
+    }
+}

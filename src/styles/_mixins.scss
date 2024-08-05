@@ -1,0 +1,19 @@
+// src/styles/_mixins.scss
+
+@mixin box-shadow($x: 0, $y: 4px, $blur: 8px, $color: rgba(0, 0, 0, 0.2)) {
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin button-style($bg-color, $hover-color) {
+    background-color: $bg-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: $hover-color;
+    }
+}
