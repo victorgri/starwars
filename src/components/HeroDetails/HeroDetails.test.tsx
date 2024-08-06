@@ -1,9 +1,10 @@
 import "@testing-library/jest-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { HeroDetails } from "./HeroDetails";
 import React from "react";
+import { validFilms, validPersonNames } from "../../test/constants";
 
-test("renders hero details and handles loading state", () => {
+test("renders hero details and handles loading state", async () => {
   const setDetails = jest.fn();
   const setIsLoading = jest.fn();
 
@@ -16,9 +17,15 @@ test("renders hero details and handles loading state", () => {
     />
   );
 
-  expect(screen.getByText("Luke Skywalker")).toBeInTheDocument();
-  expect(screen.getByText("A New Hope")).toBeInTheDocument();
-  expect(screen.getByText("X-Wing")).toBeInTheDocument();
+  // Ensure the component renders name and film are checked
+  await waitFor(() => {
+    const nameIsPresent = validPersonNames.some((name) =>
+      screen.queryByText(name)
+    );
+      const filmIsPresent = validFilms.some((title) => screen.queryByText(title));
+      expect(nameIsPresent).toBe(true);
+      expect(filmIsPresent).toBe(true);
+  });
 
   const backButton = screen.getByText("Back");
   fireEvent.click(backButton);

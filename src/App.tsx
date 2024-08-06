@@ -5,12 +5,14 @@ import { HeroDetails } from "./components/HeroDetails/HeroDetails";
 import { HeroesList } from "./components/HeroesList/HeroesList";
 
 const AppMain: React.FC = () => {
+    // define states for app
   const [details, setDetails] = useState(false);
   const [heroes, setHeroes] = useState<Person[]>([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [heroId, setHeroId] = useState<number>(0);
 
+    // fetch heroes 
   useEffect(() => {
     const fetchHeroes = async () => {
       if (page > 9) {
@@ -34,6 +36,7 @@ const AppMain: React.FC = () => {
     fetchHeroes();
   }, [page]);
 
+    // conditional rendering components
   return (
     <>
       {details && heroId !== null ? (

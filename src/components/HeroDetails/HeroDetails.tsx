@@ -11,6 +11,7 @@ import "./HeroDetails.scss";
 import "@xyflow/react/dist/style.css";
 import classNames from "classnames";
 
+// define type for props
 type Props = {
   setDetails: React.Dispatch<React.SetStateAction<boolean>>;
   heroId: number;
@@ -24,13 +25,16 @@ export const HeroDetails: React.FC<Props> = ({
   isLoading,
   setIsLoading,
 }) => {
+  // define local states for component
   const [hero, setHero] = useState<Person | undefined>();
   const [films, setFilms] = useState<Film[]>([]);
   const [starships, setStarships] = useState<Starship[]>([]);
   const [nodes, setNodes] = useState<Node[]>([]);
   const [edges, setEdges] = useState<Edge[]>([]);
+  // define ref to render nodes and edges depends on the ref
   const ref = useRef<HTMLDivElement | null>(null);
 
+    
   const updateNodesAndEdges = () => {
     if (ref.current && hero) {
       const width = ref.current.clientWidth;
@@ -58,7 +62,8 @@ export const HeroDetails: React.FC<Props> = ({
       // Create starship nodes and edges
       const starshipNodes: Node[] = [];
       const starshipEdges: Edge[] = [];
-
+        console.log(films.map(film => film.title));
+        
       films
         .filter((film) => hero.films.includes(+film.episode_id))
         .forEach((film, filmIndex) => {
@@ -166,7 +171,7 @@ export const HeroDetails: React.FC<Props> = ({
   }, [hero, films, starships]);
 
   return (
-    <section className={classNames("details", { 'details__active': isLoading })}>
+    <section className={classNames("details", { details__active: isLoading })}>
       {isLoading ? (
         <ClipLoader size={100} color="green" data-testid="spinner" />
       ) : (
