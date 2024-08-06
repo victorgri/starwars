@@ -1,6 +1,7 @@
-import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { HeroDetails } from "./HeroDetailsMain";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { HeroDetails } from "./HeroDetails";
+import React from "react";
 
 test("renders hero details and handles loading state", () => {
   const setDetails = jest.fn();

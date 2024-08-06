@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Person } from './Types';
 import { getHeroes } from "./api/apiMain";
-import { HeroesList } from "./components/HeroesList/HeroesListMain";
-import { HeroDetails } from "./components/HeroDetails/HeroDetailsMain";
-import { Person } from "./Types";
+import { HeroDetails } from "./components/HeroDetails/HeroDetails";
+import { HeroesList } from "./components/HeroesList/HeroesList";
 
 const AppMain: React.FC = () => {
   const [details, setDetails] = useState(false);
