@@ -166,7 +166,7 @@ export const HeroDetails: React.FC<Props> = ({
   }, [hero, films, starships]);
 
   return (
-    <section className={classNames("details", { details__active: isLoading })}>
+    <section className={classNames("details", { 'details__active': isLoading })}>
       {isLoading ? (
         <ClipLoader size={100} color="green" data-testid="spinner" />
       ) : (

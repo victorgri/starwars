@@ -20,7 +20,7 @@ export const HeroesList: React.FC<Props> = ({
   setHeroId,
 }) => {
   return (
-    <section className={classNames("heroes", { heroes__isLoading: isLoading })}>
+    <section className={classNames("heroes", { 'heroes__isLoading': isLoading })}>
       {isLoading ? (
         <ClipLoader size={100} color="green" data-testid="spinner" />
       ) : (
