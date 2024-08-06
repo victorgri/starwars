@@ -62,8 +62,7 @@ export const HeroDetails: React.FC<Props> = ({
       // Create starship nodes and edges
       const starshipNodes: Node[] = [];
       const starshipEdges: Edge[] = [];
-        console.log(films.map(film => film.title));
-        
+
       films
         .filter((film) => hero.films.includes(+film.episode_id))
         .forEach((film, filmIndex) => {
